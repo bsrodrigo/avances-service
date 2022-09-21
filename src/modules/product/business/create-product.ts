@@ -1,4 +1,4 @@
-import { ProductsModel } from "@/modules/product/models";
+import { ProductsModel } from "@modules/product/models";
 
 export class CreateProduct {
   data: string;

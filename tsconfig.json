@@ -9,7 +9,8 @@
     "removeComments": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@modules/*": ["./src/modules/*"],
+      "@config/*": ["./src/config/*"]
     },
     "typeRoots": ["./node_modules/@types", "./src/@types"],
     "esModuleInterop": true,
