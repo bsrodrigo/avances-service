@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
+    "start": "npm run build && node ./dist/server.js",
     "dev": "tsnd  -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules  src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
