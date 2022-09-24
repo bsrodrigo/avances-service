@@ -36,7 +36,7 @@ class Server {
 
   enableCors() {
     const corsConfig = {
-      origin: ["https://avances.vercel.app", "http://localhost:8080/"],
+      origin: ["https://avances.vercel.app", "http://localhost:8080"],
       optionsSuccessStatus: 200,
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     };
