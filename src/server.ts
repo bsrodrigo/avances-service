@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 
 import productsRouters from "./modules/product/routes";
 
@@ -9,6 +10,16 @@ const app = express();
 
 app.use(express.json());
 app.use(productsRouters);
+
+app.use(cors({
+  // origin: /(localhost)|(\.aberturadigital\.com\.br)|(aberturadigital\.com\.br)/,
+  origin: "*",
+  credentials: true,
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  preflightContinue: false,
+  exposedHeaders: ['Total-Count'],
+}))
 
 mongoose
   .connect(
