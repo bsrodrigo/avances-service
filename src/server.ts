@@ -22,10 +22,10 @@ class Server {
   port: number | string;
 
   constructor() {
-    this.app = express();
     this.port = process.env.PORT || 3333;
-    dataBase();
+    this.app = express();
     this.middleware();
+    dataBase();
     this.routes();
     this.app.listen(this.port, () =>
       console.log("Server started http://localhost:3333")
@@ -35,12 +35,8 @@ class Server {
   middleware() {
     const corsConfig = {
       origin: ["https://avances.vercel.app)", "localhost"],
-      // origin: "*",
-      credentials: false,
-      // optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+      optionsSuccessStatus: 200,
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-      // preflightContinue: false,
-      // exposedHeaders: ["Total-Count"],
     };
 
     this.app.use(express.json());
