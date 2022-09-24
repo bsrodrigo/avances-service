@@ -9,6 +9,7 @@ export class ListProducts {
   async execute() {
     try {
       const products = await ProductsModel.find();
+      console.log({ products });
       return products;
     } catch (error) {
       console.error({ error });
