@@ -9,8 +9,8 @@ const port = process.env.PORT || 3333;
 const app = express();
 
 const corsConfig = {
-  // origin: /(localhost)|(avances-service.herokuapp.com)/,
-  origin: "*",
+  origin: /(localhost)|(avances.vercel.app)/,
+  // origin: "*",
   credentials: false,
   // optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
