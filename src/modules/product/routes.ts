@@ -4,9 +4,9 @@ import {
   listProductsController,
 } from "./controllers/";
 
-const router = Router();
+const routes = Router();
 
-router.get("/product", listProductsController);
-router.post("/product", createProductController);
+routes.get("/product", listProductsController);
+routes.post("/product", createProductController);
 
-export default router;
+export default routes;
