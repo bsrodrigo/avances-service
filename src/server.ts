@@ -24,24 +24,30 @@ class Server {
   constructor() {
     this.port = process.env.PORT || 3333;
     this.app = express();
-    this.middleware();
+
     dataBase();
+    this.middleware();
     this.routes();
+
     this.app.listen(this.port, () =>
       console.log("Server started http://localhost:3333")
     );
   }
 
-  middleware() {
+  enableCors() {
     const corsConfig = {
       origin: ["https://avances.vercel.app)", "localhost"],
       optionsSuccessStatus: 200,
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     };
 
+    this.app.use(cors(corsConfig));
+  }
+
+  middleware() {
+    this.enableCors();
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: false }));
-    this.app.use(cors(corsConfig));
   }
 
   routes() {
