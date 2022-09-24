@@ -41,7 +41,7 @@ class Server {
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
     };
 
-    this.app.use(cors(corsConfig));
+    this.app.use(cors());
   }
 
   middleware() {
