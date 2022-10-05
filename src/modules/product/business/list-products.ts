@@ -8,8 +8,10 @@ export class ListProducts {
 
   async execute() {
     try {
-      const products = await ProductsModel.find();
-      console.log({ products });
+      const products = await ProductsModel.find({
+        isDeleted: { $ne: true },
+      });
+
       return products;
     } catch (error) {
       console.error({ error });

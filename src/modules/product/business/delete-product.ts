@@ -1,27 +1,25 @@
 import { ProductsModel } from "@modules/product/models";
 
-export class UpdateProduct {
+export class DeleteProduct {
   id: string;
-  data: any;
-  constructor(id, data) {
+  constructor(id) {
     this.id = id;
-    this.data = data;
   }
 
   async execute() {
     try {
       const update = {
-        ...this.data,
-        _id: this.id,
+        isDeleted: true,
       };
 
-      const product = await ProductsModel.findByIdAndUpdate(
+      await ProductsModel.findByIdAndUpdate(
         {
           _id: this.id,
         },
         update
       );
-      return product;
+
+      return true;
     } catch (error) {
       console.error({ error });
     }

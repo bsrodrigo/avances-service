@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   createProductController,
+  deleteProductController,
   listProductsController,
   findMeasurementsController,
   updateProductController,
@@ -8,6 +9,7 @@ import {
 
 const routes = Router();
 
+routes.delete("/product/:id", deleteProductController);
 routes.get("/measurement", findMeasurementsController);
 routes.get("/product", listProductsController);
 routes.post("/product", createProductController);
