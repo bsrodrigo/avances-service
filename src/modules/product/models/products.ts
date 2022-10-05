@@ -13,6 +13,7 @@ const ProductsSchema = new Schema(
     activeRental: Boolean,
     fixedPrice: Boolean,
     isInactive: Boolean,
+    isDeleted: { type: Boolean, default: false },
   },
   {
     collection: "Products",
