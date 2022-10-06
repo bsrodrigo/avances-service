@@ -15,13 +15,13 @@ export class UpdateProduct {
         _id: this.id,
       };
 
-      const product = await ProductsModel.findByIdAndUpdate(
+      await ProductsModel.findByIdAndUpdate(
         {
           _id: this.id,
         },
         update
       );
-      return product;
+      return update;
     } catch (error) {
       console.error({ error });
     }

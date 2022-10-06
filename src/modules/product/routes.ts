@@ -13,6 +13,6 @@ routes.delete("/product/:id", deleteProductController);
 routes.get("/measurement", findMeasurementsController);
 routes.get("/product", listProductsController);
 routes.post("/product", createProductController);
-routes.put("/product/:id", updateProductController);
+routes.patch("/product/:id", updateProductController);
 
 export default routes;
