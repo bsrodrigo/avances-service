@@ -7,12 +7,12 @@ import {
   updateProductController,
 } from "@modules/product/controllers";
 
-const routes = Router();
+const productRoutes = Router();
 
-routes.delete("/product/:id", deleteProductController);
-routes.get("/measurement", findMeasurementsController);
-routes.get("/product", listProductsController);
-routes.post("/product", createProductController);
-routes.patch("/product/:id", updateProductController);
+productRoutes.delete("/product/:id", deleteProductController);
+productRoutes.get("/measurement", findMeasurementsController);
+productRoutes.get("/product", listProductsController);
+productRoutes.post("/product", createProductController);
+productRoutes.patch("/product/:id", updateProductController);
 
-export default routes;
+export default productRoutes;

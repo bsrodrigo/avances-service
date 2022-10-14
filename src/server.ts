@@ -2,7 +2,8 @@ import express, { Application } from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 
-import productsRouters from "./modules/product/routes";
+import inventoryRouters from "@modules/inventory/routes";
+import productsRouters from "@modules/product/routes";
 
 const dataBase = () => {
   mongoose
@@ -51,6 +52,7 @@ class Server {
   }
 
   routes() {
+    this.app.use(inventoryRouters);
     this.app.use(productsRouters);
   }
 }
