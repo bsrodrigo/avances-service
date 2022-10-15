@@ -20,6 +20,14 @@ export class FindInventoryHistory {
         },
       },
       {
+        $lookup: {
+          from: "Measurements",
+          localField: "product._measurement",
+          foreignField: "_id",
+          as: "measurement",
+        },
+      },
+      {
         $unwind: {
           path: "$product",
         },
@@ -27,6 +35,11 @@ export class FindInventoryHistory {
       {
         $unwind: {
           path: "$transactionType",
+        },
+      },
+      {
+        $unwind: {
+          path: "$measurement",
         },
       },
     ]);
