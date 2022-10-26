@@ -59,8 +59,8 @@ export class CreateInventoryHistory {
       usedQuantity: this.data.quantity,
       updatedQuantity:
         actionType === "ADDITION"
-          ? currentQuantity + this.data.quantity
-          : currentQuantity - this.data.quantity,
+          ? currentQuantity + Number(this.data.quantity)
+          : currentQuantity - Number(this.data.quantity),
       _transactionType: this.data?.transactionType,
     };
 
