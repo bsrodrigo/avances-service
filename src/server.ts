@@ -8,7 +8,7 @@ import productsRouters from "@modules/product/routes";
 const dataBase = () => {
   mongoose
     .connect(
-      "mongodb+srv://avances:xsw2zaq1@cluster0.r6i2kbq.mongodb.net/?retryWrites=true&w=majority"
+      "mongodb+srv://avances:xsw2zaq1@cluster0.r6i2kbq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     )
     .then((data) => {
       console.log("MongoDB connection success");
